@@ -29,6 +29,17 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/lastName/{lastName}")
+    public List<User> getUserByLastName(@PathVariable String lastName){return  userService.getUsersByLastName(lastName);}
+
+    @GetMapping("/byemail/{email}")
+    public List<User> getUserByEmail(@PathVariable String email){return  userService.getUsersByEmail(email);}
+
+    @GetMapping("/byphone/{phone}")
+    public List<User> findUsersByPhone(@PathVariable String phone) {
+        return userService.findUsersByPhone(phone);
+    }
+
     @PostMapping("/")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
