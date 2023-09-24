@@ -1,21 +1,30 @@
 // AdminPage.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminNavbar from './AdminNav';
+import UserList from '../UserPage/UserList';
 
 const AdminPage = () => {
-  return (
-      <div class="container mx-auto h-screen">
-          <div>
-              <AdminNavbar />
-          </div>
-          <div className="m-auto">
-              <h1>Admin Page</h1>
-              <p>This is the admin page content.</p>
-          </div>
-          {/* Third div below the second div */}
-          <div>
-              {/* Content for the third div */}
-          </div>
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+      // Fetch the list of users when the component mounts
+      fetch('http://localhost:8080/users/') // Replace with your actual API endpoint
+        .then((response) => response.json())
+        .then((data) => setUsers(data)); // Assuming your API returns an array of user objects
+    }, []);
+  
+  
+    return (
+        <div class="container mx-auto h-screen">
+        <div>
+          <AdminNavbar />
+        </div>
+        <div className="m-auto">
+          {/* Use the UserList component to display the user data */}
+          <UserList userData={users} />
+        </div>
+        {/* Third div below the second div */}
+        <div>{/* Content for the third div */}</div>
       </div>
   );
 };

@@ -5,6 +5,7 @@ import Layout from './LandingPage/Layout';
 import LandingPage from './LandingPage/LandingPage';
 import AdminPage from './AdminPage/AdminPage';
 import UserPage from './UserPage/UserPage';
+import UserRegister from './UserPage/UserRegister';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                         <Route index element={<LandingPage />} />
                         <Route path="/user" element={<UserPage />} />
                         <Route path="/admin" element={<AdminPage />} />
+                        <Route path="/userRegister" element={<UserRegister />} />
                     </Route>
                 </Routes>
             </div>
