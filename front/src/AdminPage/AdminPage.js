@@ -1,7 +1,7 @@
 // AdminPage.js
 import React, { useState, useEffect } from 'react';
 import AdminNavbar from './AdminNav';
-import UserList from '../UserPage/UserList';
+import UserList from '../AdminPage/UserList';
 
 const AdminPage = () => {
     const [users, setUsers] = useState([]);

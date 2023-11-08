@@ -22,7 +22,14 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
+      colors: {
+        'DawnPink' : '#f2e7e2',
+        'AlbescentWhite' : '#f4e6cb',
+        'Romantic' : '#f9d0be',
+        'Wafer' : '#d5c8c3',
+        'Maverick' : '#e1c6d6'
+      },
     }
   },
   corePlugins: {
