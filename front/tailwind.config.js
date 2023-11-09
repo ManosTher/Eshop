@@ -25,10 +25,11 @@ module.exports = {
       },
       colors: {
         'DawnPink' : '#f2e7e2',
-        'AlbescentWhite' : '#f4e6cb',
-        'Romantic' : '#f9d0be',
+        'AlbescentWhite' : '#fcf8f0',
+        'Romantic' : '#f6c2ab',
         'Wafer' : '#d5c8c3',
-        'Maverick' : '#e1c6d6'
+        'Maverick' : '#e1c6d6',
+        'TobaccoBrown' : '#5b4838'
       },
     }
   },
