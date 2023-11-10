@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 
+@font-face {
+    font-family: 'Vacelyn';
+    src: local('Vacelyn') url('./fonts/Vacelyn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

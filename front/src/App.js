@@ -15,7 +15,7 @@ import ProductList from './UserPage/ProductList';
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div className="App font-Vacelyn">
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<LandingPage />} />

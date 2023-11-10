@@ -5,16 +5,19 @@ const BeautyShopNavbar = () => {
     <div className="bg-AlbescentWhite mb-5">
       <nav className="flex flex-row items-center justify-center sticky top-0">
         <div className="flex flex-grow text-center space-x-20">
-          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white bg-Romantic h-14 border-2 border-TobaccoBrown">
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic h-14 border-2 border-TobaccoBrown">
             Home
           </button>
-          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white bg-Romantic border-2 border-TobaccoBrown">
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
             About
           </button>
-          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white bg-Romantic border-2 border-TobaccoBrown">
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
+            Contact
+          </button>
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
             Login
           </button>
-          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white bg-Romantic border-2 border-TobaccoBrown">
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
             Cart
           </button>
         </div>

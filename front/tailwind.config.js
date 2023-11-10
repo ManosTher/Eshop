@@ -14,6 +14,7 @@ module.exports = {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      Vacelyn: ['Vacelyn', 'sans-serif']
     },
     extend: {
       spacing: {
@@ -37,5 +38,6 @@ module.exports = {
     aspectRatio: false,
   },
   plugins: [
+    require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio')],
 }
