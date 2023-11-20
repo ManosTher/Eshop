@@ -10,6 +10,7 @@ import UserList from './AdminPage/UserList';
 import NavBar from './UserPage/NavBar';
 import SideBar from './UserPage/SideBar';
 import ProductList from './UserPage/ProductList';
+import Login from './UserPage/Login';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                         <Route path="/navBar" element={<NavBar />} />
                         <Route path="/sideBar" element={<SideBar />} />
                         <Route path="/productList" element={<ProductList />} />
+                        <Route path="/login" element={<Login />} />
                     </Route>
                 </Routes>
             </div>
