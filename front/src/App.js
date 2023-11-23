@@ -14,6 +14,7 @@ import Login from './UserPage/Login';
 import About from './UserPage/About';
 import Contact from './UserPage/Contact';
 import Cart from './UserPage/Cart';
+import ProductModal from './UserPage/ProductModal';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/productModal" element={<ProductModal />} />
                     </Route>
                 </Routes>
             </div>

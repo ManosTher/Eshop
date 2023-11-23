@@ -1,27 +1,54 @@
-// Cart.jsx
+import React, { useState , useEffect} from 'react';
+import CartItem from './CartItem';
 
-import React from 'react';
+const Cart = ({ products, onClose, onCheckout, onDelete }) => {
+  // Placeholder for user information
+  const [user, setUser] = useState({
+    name: 'John Doe',
+    email: 'john@example.com',
+    // Add other user information as needed
+  });
 
-const Cart = ({ cartItems }) => {
-  const getTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
+  // State for cart total and other cart-related logic
+  const [cartTotal, setCartTotal] = useState(0);
+
+  // Function to calculate the total price of items in the cart
+  const calculateTotal = () => {
+    const total = products.reduce((acc, product) => {
+      return acc + product.price * product.quantity;
+    }, 0);
+    setCartTotal(total);
   };
 
+  // Other logic for adjusting quantities, deleting items, etc.
+
+  // useEffect to recalculate total when products change
+  useEffect(() => {
+    calculateTotal();
+  }, [products]);
+
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
-      <ul>
-        {cartItems.map((item, index) => (
-          <li key={index} className="flex justify-between items-center mb-2">
-            <span>{item.name}</span>
-            <span>${item.price.toFixed(2)}</span>
-          </li>
-        ))}
-      </ul>
-      <hr className="my-4" />
-      <div className="flex justify-between items-center">
-        <span className="font-bold">Total:</span>
-        <span>${getTotal()}</span>
+    <div className="modal">
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
+        <h2>Your Cart</h2>
+        <div className="cart-items">
+          {products.map((product) => (
+            <CartItem
+              key={product.id}
+              product={product}
+              onDelete={() => onDelete(product.id)}
+              // Add other props as needed
+            />
+          ))}
+        </div>
+        <div className="cart-summary">
+          <p>Total: ${cartTotal}</p>
+          {/* Add other summary information */}
+        </div>
+        <button onClick={onCheckout}>Checkout</button>
       </div>
     </div>
   );
