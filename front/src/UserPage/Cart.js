@@ -1,37 +1,27 @@
-import React, { useState } from 'react';
+// Cart.jsx
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+import React from 'react';
 
-  // Function to add an item to the cart
-  const addItemToCart = (item) => {
-    const updatedItems = [...cartItems, item];
-    setCartItems(updatedItems);
-    setTotalPrice(totalPrice + item.price);
-  };
-
-  // Function to remove an item from the cart
-  const removeItemFromCart = (item) => {
-    const updatedItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
-    setCartItems(updatedItems);
-    setTotalPrice(totalPrice - item.price);
+const Cart = ({ cartItems }) => {
+  const getTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
   };
 
   return (
-    <div>
-      {/* Render your cart items here */}
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
       <ul>
-        {cartItems.map((item) => (
-          <li key={item.id}>
+        {cartItems.map((item, index) => (
+          <li key={index} className="flex justify-between items-center mb-2">
             <span>{item.name}</span>
-            <span>{item.price}</span>
-            <button onClick={() => removeItemFromCart(item)}>Remove</button>
+            <span>${item.price.toFixed(2)}</span>
           </li>
         ))}
       </ul>
-      <div>
-        <p>Total Price: {totalPrice}</p>
+      <hr className="my-4" />
+      <div className="flex justify-between items-center">
+        <span className="font-bold">Total:</span>
+        <span>${getTotal()}</span>
       </div>
     </div>
   );

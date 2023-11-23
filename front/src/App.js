@@ -11,11 +11,16 @@ import NavBar from './UserPage/NavBar';
 import SideBar from './UserPage/SideBar';
 import ProductList from './UserPage/ProductList';
 import Login from './UserPage/Login';
+import About from './UserPage/About';
+import Contact from './UserPage/Contact';
+import Cart from './UserPage/Cart';
 
 
 function App() {
+    
     return (
         <Router>
+ 
             <div className="App font-Vacelyn">
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -28,6 +33,9 @@ function App() {
                         <Route path="/sideBar" element={<SideBar />} />
                         <Route path="/productList" element={<ProductList />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/cart" element={<Cart />} />
                     </Route>
                 </Routes>
             </div>
