@@ -1,31 +1,34 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import CartItem from './CartItem';
 
 const Cart = ({ products, onClose, onCheckout, onDelete }) => {
-  // Placeholder for user information
+  const [cart, setCart] = useState(products);
+
   const [user, setUser] = useState({
     name: 'John Doe',
     email: 'john@example.com',
     // Add other user information as needed
   });
 
-  // State for cart total and other cart-related logic
   const [cartTotal, setCartTotal] = useState(0);
 
-  // Function to calculate the total price of items in the cart
   const calculateTotal = () => {
-    const total = products.reduce((acc, product) => {
-      return acc + product.price * product.quantity;
-    }, 0);
+    const total = products.reduce((acc, product) => acc + product.price * product.quantity, 0);
     setCartTotal(total);
   };
 
-  // Other logic for adjusting quantities, deleting items, etc.
-
-  // useEffect to recalculate total when products change
   useEffect(() => {
     calculateTotal();
-  }, [products]);
+  }, [cart]);
+  
+
+  const handleQuantityChange = (productId, newQuantity) => {
+    setCart((prevCart) =>
+      prevCart.map((product) =>
+        product.id === productId ? { ...product, quantity: newQuantity } : product
+      )
+    );
+  };
 
   return (
     <div className="modal">
@@ -35,12 +38,14 @@ const Cart = ({ products, onClose, onCheckout, onDelete }) => {
         </span>
         <h2>Your Cart</h2>
         <div className="cart-items">
-          {products.map((product) => (
+          {cart.map((product) => (
             <CartItem
               key={product.id}
               product={product}
               onDelete={() => onDelete(product.id)}
-              // Add other props as needed
+              onQuantityChange={(newQuantity) =>
+                handleQuantityChange(product.id, newQuantity)
+              }
             />
           ))}
         </div>

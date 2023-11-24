@@ -47,7 +47,8 @@ const BeautyShopNavbar = ({ onPageChange }) => {
             className="block rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
             Login
           </button>
-          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown">
+          <button className="rounded-lg w-full text-TobaccoBrown hover:text-white hover:bg-TobaccoBrown bg-Romantic border-2 border-TobaccoBrown"
+            onClick={() => handleNavLinkClick('Cart')}>
             Cart
           </button>
         </div>

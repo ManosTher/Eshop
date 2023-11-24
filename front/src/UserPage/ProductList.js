@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductModal from "./ProductModal";
 
-const ProductList = ({ selectedCategory, searchTerm }) => {
+const ProductList = ({ selectedCategory, searchTerm, onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -66,7 +66,7 @@ const ProductList = ({ selectedCategory, searchTerm }) => {
         <ProductModal
           product={selectedProduct}
           onClose={handleCloseModal}
-          onAddToCart={(product) => console.log('Add to Cart', product)} // Implement your addToCart logic
+          onAddToCart={onAddToCart}
         />
       )}
 

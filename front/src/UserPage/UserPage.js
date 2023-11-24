@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 import NavBar from './NavBar';
-import SideBar from './SideBar';
-import ProductList from './ProductList';
 import About from './About'; 
 import Contact from './Contact'; 
 import ProductSection from './ProductSection';
@@ -42,6 +40,7 @@ const UserPage = () => {
       // If the product is not in the cart, add it with quantity 1
       setCart([...cart, { ...product, quantity: 1 }]);
     }
+    console.log('Product added to cart:', product);
   };
   
   const handleDeleteProduct = (productId) => {
@@ -50,17 +49,13 @@ const UserPage = () => {
     setCart(updatedCart);
   };
   
-  const handleQuantityChange = (productId, newQuantity) => {
-    // Implement logic to adjust the quantity of a product in the cart
-    const handleQuantityChange = (productId, newQuantity) => {
+   const handleQuantityChange = (productId, newQuantity) => {
       setCart((prevCart) =>
         prevCart.map((product) =>
           product.id === productId ? { ...product, quantity: newQuantity } : product
         )
       );
     };
-    
-  };
   
   const handleCheckout = () => {
     // Implement logic to handle checkout, possibly redirect to order page with cart information
@@ -96,8 +91,7 @@ const UserPage = () => {
             onSearch={handleSearch}
             selectedCategory={selectedCategory}
             searchTerm={searchTerm}
-            onAddToCart={(product) => handleAddToCart(product)}
-          />
+            onAddToCart={(product) => handleAddToCart(product)}          />
         );
     }
   }
