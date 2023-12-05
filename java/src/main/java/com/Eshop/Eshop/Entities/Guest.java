@@ -30,6 +30,9 @@ public class Guest {
 
     // Constructors, getters, and setters
 
+    public Guest() {
+    }
+
     public Guest(Long id, String firstName, String lastName, String email, String phone, String city, String address) {
         this.id = id;
         this.firstName = firstName;

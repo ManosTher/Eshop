@@ -25,8 +25,7 @@ CREATE TABLE Guest (
   email VARCHAR(255) NOT NULL,
   phone VARCHAR(255) NOT NULL,
   city VARCHAR(255),
-  address VARCHAR(255),
-  pswd VARCHAR (255)
+  address VARCHAR(255)
 );
 
 -- Table: Category
