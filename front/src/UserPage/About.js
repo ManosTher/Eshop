@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 border-solid border-2 rounded-lg border-Romantic">
       <h1 className="text-3xl font-bold mb-4">Welcome to Aphrodite</h1>
       <p className="text-gray-700">
         Aphrodite, where beauty meets sophistication. We are more than just a brand; we are a lifestyle.

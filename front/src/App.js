@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -6,7 +7,6 @@ import LandingPage from './LandingPage/LandingPage';
 import AdminPage from './AdminPage/AdminPage';
 import UserPage from './UserPage/UserPage';
 import UserRegister from './UserPage/UserRegister';
-import UserList from './AdminPage/UserList';
 import NavBar from './UserPage/NavBar';
 import SideBar from './UserPage/SideBar';
 import ProductList from './UserPage/ProductList';
@@ -18,18 +18,14 @@ import ProductModal from './UserPage/ProductModal';
 
 
 function App() {
-    
     return (
         <Router>
- 
             <div className="App font-Vacelyn">
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<LandingPage />} />
                         <Route path="/user" element={<UserPage />} />
-                        <Route path="/admin" element={<AdminPage />} />
-                        <Route path="/userRegister" element={<UserRegister />} />
-                        <Route path="/userList" element={<UserList />} />
+                        <Route path="/admin/:selectedOption" element={<AdminPage />} />                        <Route path="/userRegister" element={<UserRegister />} />
                         <Route path="/navBar" element={<NavBar />} />
                         <Route path="/sideBar" element={<SideBar />} />
                         <Route path="/productList" element={<ProductList />} />

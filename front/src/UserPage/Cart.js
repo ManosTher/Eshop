@@ -31,7 +31,7 @@ const Cart = ({ products, onClose, onCheckout, onDelete }) => {
   };
 
   return (
-    <div className="modal">
+    <div className="modal border-solid p-[4%] border-2 rounded-lg border-Romantic">
       <div className="modal-content">
         <span className="close" onClick={onClose}>
           &times;
