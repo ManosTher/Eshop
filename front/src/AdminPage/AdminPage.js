@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import AdminNavbar from './AdminNav';
 import GuestList from './GuestList';
 import UserList from './UserList';
+import Products from './Products';
 
 const AdminPage = () => {
   const { selectedOption } = useParams();
@@ -17,9 +18,9 @@ const AdminPage = () => {
       case 'orders':
         return null;
       case 'products':
-        return null;
+        return <Products />;
       default:
-        return null;
+        return <UserList />;
     }
   };
 

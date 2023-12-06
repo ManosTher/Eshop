@@ -25,6 +25,7 @@ function App() {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<LandingPage />} />
                         <Route path="/user" element={<UserPage />} />
+                        <Route path="/admin" element={<AdminPage />} />
                         <Route path="/admin/:selectedOption" element={<AdminPage />} />                        <Route path="/userRegister" element={<UserRegister />} />
                         <Route path="/navBar" element={<NavBar />} />
                         <Route path="/sideBar" element={<SideBar />} />
